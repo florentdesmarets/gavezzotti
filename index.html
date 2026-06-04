@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gavezzotti — Bar à Pâtes Italien</title>
+  <meta name="description" content="Gavezzotti, bar à pâtes italien à Orléans. Pâtes fraîches, gnocchis, raviolis et bruschetta, sur place ou à emporter. 209 Rue de Bourgogne, 45000 Orléans." />
+  <meta name="keywords" content="bar à pâtes, pâtes italiennes, restaurant Orléans, Gavezzotti, gnocchi, raviolis, bruschetta, sur place, à emporter" />
+  <meta name="author" content="Gavezzotti" />
+
+  <!-- Open Graph (partage Facebook / WhatsApp) -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Gavezzotti — Bar à Pâtes Italien · Orléans" />
+  <meta property="og:description" content="Pâtes fraîches, gnocchis, raviolis et bruschetta au cœur d'Orléans. Sur place ou à emporter. 209 Rue de Bourgogne." />
+  <meta property="og:image" content="images/hero.jpg.png" />
+  <meta property="og:url" content="https://gavezzotti.fr" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gavezzotti — Bar à Pâtes Italien · Orléans" />
+  <meta name="twitter:description" content="Pâtes fraîches, gnocchis, raviolis et bruschetta au cœur d'Orléans." />
+  <meta name="twitter:image" content="images/hero.jpg.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- MENU LATÉRAL -->
+  <div id="menu-overlay" class="menu-overlay"></div>
+  <nav id="side-menu" class="side-menu">
+    <button id="menu-close" class="menu-close" aria-label="Fermer le menu">&#x2715;</button>
+    <div class="menu-logo">
+      <img src="images/title%20Black.png" alt="Gavezzotti" />
+    </div>
+    <ul class="menu-links">
+      <li><a href="#qui-sommes-nous">Qui sommes nous ?</a></li>
+      <li><a href="#evenements">Nos événements</a></li>
+      <li><a href="#suggestions">Suggestion de la semaine</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#horaires">Nos horaires</a></li>
+      <li><a href="#contact">Nous contacter</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER FIXE -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-wrap" id="logo-click-zone">
+        <img src="images/title%20Black.png" alt="Gavezzotti" class="header-logo" />
+      </div>
+      <button id="menu-burger" class="burger-btn" aria-label="Ouvrir le menu">
+        <span class="flag-bar green"></span>
+        <span class="flag-bar white"></span>
+        <span class="flag-bar red"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SLIDESHOW -->
+    <section id="hero" class="hero-section">
+      <div class="hero-slideshow" id="hero-slideshow">
+        <div class="hero-slide active" style="background-image:url('images/hero.jpg.png')"></div>
+        <div class="hero-slide" style="background-image:url('images/IMG_20260604_144341.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/IMG_20260604_144345.jpg')"></div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">Bar à Pâtes Italien</h1>
+        <p class="hero-subtitle">Sur Place ou à Emporter</p>
+        <a href="#qui-sommes-nous" class="hero-arrow" aria-label="Défiler vers le bas">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+          <span>En savoir plus</span>
+        </a>
+      </div>
+      <div class="hero-dots" id="hero-dots">
+        <span class="hero-dot active"></span>
+        <span class="hero-dot"></span>
+        <span class="hero-dot"></span>
+      </div>
+    </section>
+
+    <!-- QUI SOMMES NOUS -->
+    <section id="qui-sommes-nous" class="section qsn-section">
+      <div class="container qsn-inner">
+        <div class="qsn-text reveal-left">
+          <h2 class="section-title">Qui sommes nous ?</h2>
+          <p>
+            Bienvenue chez Gavezzotti ! Nous sommes un jeune couple passionné de cuisine italienne, et c'est avec beaucoup d'amour qu'on a ouvert notre bar à pâtes au cœur d'Orléans.
+          </p>
+          <p>
+            Ici, pas de chichis : des pâtes généreuses, des sauces préparées maison, des produits de qualité choisis avec soin. Que ce soit pour un déjeuner rapide ou un dîner tranquille, on vous accueille comme à la maison — sur place ou à emporter.
+          </p>
+          <p>
+            Notre petit plus ? Une nouvelle bruschetta au menu, uniquement sur place, à découvrir dès maintenant !
+          </p>
+        </div>
+        <div class="qsn-photo reveal-right">
+          <img src="images/equipe.jpg.png" alt="L'équipe Gavezzotti" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CARROUSEL DE PLATS -->
+    <section class="section carousel-section">
+      <div class="container">
+        <h2 class="section-title centered reveal">Nos créations</h2>
+        <p class="carousel-intro reveal delay-1">Des pâtes fraîches, des sauces généreuses, des saveurs qui font voyager.</p>
+      </div>
+      <div class="carousel-wrap reveal delay-2">
+        <button class="carousel-btn prev" id="car-prev" aria-label="Précédent">&#8249;</button>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carousel-track">
+            <div class="carousel-slide"><img src="images/IMG_20260604_144347.jpg" alt="Plat Gavezzotti" loading="lazy"/></div>
+            <div class="carousel-slide"><img src="images/IMG_20260604_144349.jpg" alt="Plat Gavezzotti" loading="lazy"/></div>
+            <div class="carousel-slide"><img src="images/IMG_20260604_144350.jpg" alt="Plat Gavezzotti" loading="lazy"/></div>
+            <div class="carousel-slide"><img src="images/IMG_20260604_144351.jpg" alt="Plat Gavezzotti" loading="lazy"/></div>
+            <div class="carousel-slide"><img src="images/IMG_20260604_144352.jpg" alt="Plat Gavezzotti" loading="lazy"/></div>
+            <div class="carousel-slide"><img src="images/IMG_20260604_144355.jpg" alt="Plat Gavezzotti" loading="lazy"/></div>
+            <div class="carousel-slide"><img src="images/IMG_20260604_144356.jpg" alt="Plat Gavezzotti" loading="lazy"/></div>
+            <div class="carousel-slide"><img src="images/IMG_20260604_144400.jpg" alt="Plat Gavezzotti" loading="lazy"/></div>
+          </div>
+        </div>
+        <button class="carousel-btn next" id="car-next" aria-label="Suivant">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- GALERIE MOSAÏQUE -->
+    <section class="section galerie-section">
+      <div class="container">
+        <h2 class="section-title centered reveal">Chez nous</h2>
+      </div>
+      <div class="galerie-grid reveal delay-1">
+        <div class="galerie-item tall"><img src="images/IMG_20260604_144413.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item"><img src="images/IMG_20260604_144415.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item"><img src="images/IMG_20260604_144417.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item wide"><img src="images/IMG_20260604_144418.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item"><img src="images/IMG_20260604_144420.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item tall"><img src="images/IMG_20260604_144425.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item"><img src="images/IMG_20260604_144426.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item wide"><img src="images/IMG_20260604_144428.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item"><img src="images/IMG_20260604_144430.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item"><img src="images/IMG_20260604_144433.jpg" alt="Gavezzotti" loading="lazy"/></div>
+        <div class="galerie-item"><img src="images/equipe.jpg.png" alt="L'équipe Gavezzotti" loading="lazy"/></div>
+      </div>
+    </section>
+
+    <!-- ÉVÉNEMENTS & GROUPES -->
+    <section id="evenements" class="section events-section">
+      <div class="container">
+        <h2 class="section-title centered reveal">Nous accueillons vos événements</h2>
+        <p class="events-intro reveal delay-1">Anniversaires, séminaires, repas d'entreprise… Profitez de notre espace chaleureux pour vos moments en groupe.</p>
+        <div class="events-grid">
+          <div class="event-card reveal delay-1">
+            <div class="event-icon">🎂</div>
+            <h3>Anniversaires</h3>
+            <p>Fêtez vos moments spéciaux dans une ambiance conviviale et italienne.</p>
+          </div>
+          <div class="event-card reveal delay-2">
+            <div class="event-icon">💼</div>
+            <h3>Séminaires</h3>
+            <p>Un cadre original et détendu pour vos repas d'affaires et réunions d'équipe.</p>
+          </div>
+          <div class="event-card reveal delay-3">
+            <div class="event-icon">🥂</div>
+            <h3>Événements privés</h3>
+            <p>Toute occasion mérite une bonne table. Contactez-nous pour organiser votre événement sur mesure.</p>
+          </div>
+        </div>
+        <div class="events-cta reveal delay-4">
+          <a href="tel:+33238546852" class="btn-cta">Nous contacter pour réserver</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUGGESTIONS DE LA SEMAINE -->
+    <section id="suggestions" class="section suggestions-section">
+      <div class="container">
+        <h2 class="section-title centered reveal">Cette Semaine nous vous proposons</h2>
+        <div class="suggestions-grid reveal delay-2" id="suggestions-grid">
+          <!-- Chargé dynamiquement depuis suggestions.json -->
+          <div class="suggestion-card loading-card">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-price"></div>
+            <div class="skeleton skeleton-desc"></div>
+          </div>
+          <div class="suggestion-card loading-card">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-price"></div>
+            <div class="skeleton skeleton-desc"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA CARTE -->
+    <section id="carte" class="section carte-section">
+      <div class="container">
+        <h2 class="section-title centered reveal">La Carte</h2>
+
+        <!-- Formules -->
+        <div class="formules-grid reveal delay-1">
+          <div class="formule-circle">
+            <div class="circle-inner">
+              <span class="formule-nom">Menu<br/>Pâtes</span>
+              <span class="formule-prix">14€</span>
+              <span class="formule-sub">Format XL</span>
+              <span class="formule-prix-f">16€</span>
+            </div>
+          </div>
+          <div class="formule-circle">
+            <div class="circle-inner">
+              <span class="formule-nom">Menu<br/>Gnocchis</span>
+              <span class="formule-prix">16€</span>
+              <span class="formule-sub">Format XL</span>
+              <span class="formule-prix-f">18€</span>
+            </div>
+          </div>
+          <div class="formule-circle">
+            <div class="circle-inner">
+              <span class="formule-nom">Raviolis<br/>Simples</span>
+              <span class="formule-prix">14€</span>
+              <span class="formule-sub">Format XL</span>
+              <span class="formule-prix-f">16€</span>
+            </div>
+          </div>
+          <div class="formule-circle formule-enfant">
+            <div class="circle-inner">
+              <span class="formule-nom">Formule<br/>Enfant</span>
+              <span class="formule-prix">9€</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="formule-note">La formule comprend : plat + dessert + boisson</p>
+
+        <div class="carte-columns reveal delay-2">
+          <!-- Sauces -->
+          <div class="carte-col">
+            <h3 class="carte-subtitle">Les Sauces</h3>
+            <table class="sauce-table">
+              <tr>
+                <td class="sauce-name">Franconara</td>
+                <td class="sauce-desc">crème, lardons fumés, jaune d'œuf</td>
+              </tr>
+              <tr>
+                <td class="sauce-name">Gorgonzola</td>
+                <td class="sauce-desc">crème, gorgonzola, miel, éclats de noix</td>
+              </tr>
+              <tr>
+                <td class="sauce-name">Parmiggio</td>
+                <td class="sauce-desc">sauce tomate, parmesan, balsamique</td>
+              </tr>
+              <tr>
+                <td class="sauce-name">Chorizo</td>
+                <td class="sauce-desc">crème, chorizo doux, oignons frits</td>
+              </tr>
+              <tr>
+                <td class="sauce-name">Bolo</td>
+                <td class="sauce-desc">bolognaise mijotée au bœuf</td>
+              </tr>
+              <tr>
+                <td class="sauce-name">Poulet</td>
+                <td class="sauce-desc">crème, poulet émincé, parmesan, balsamique</td>
+              </tr>
+              <tr>
+                <td class="sauce-name">Paysanne</td>
+                <td class="sauce-desc">crème infusée au lard, oignons frits, poulet émincé</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Suppléments & Desserts -->
+          <div class="carte-col">
+            <div class="supplements-box">
+              <h3 class="carte-subtitle box-title">Les Suppléments</h3>
+              <table class="supp-table">
+                <tr><td>Parmesan</td><td>1,00€</td></tr>
+                <tr><td>Mozzarella Râpée</td><td>1,50€</td></tr>
+                <tr><td>Éclats de Noix</td><td>1,00€</td></tr>
+                <tr><td>Oignons Frits</td><td>1,00€</td></tr>
+                <tr><td>Jaune d'Œuf</td><td>0,80€</td></tr>
+                <tr><td>Émincés de Poulet</td><td>2,50€</td></tr>
+              </table>
+            </div>
+            <div class="desserts-box">
+              <h3 class="carte-subtitle box-title">Les Desserts <span class="dessert-prix">compris</span></h3>
+              <ul class="dessert-list">
+                <li>Fromage Blanc, Coulis Fruits</li>
+                <li>Crème Chocolat</li>
+                <li>Crème Praline, Palet Breton</li>
+                <li>Compote de Pommes, Caramel</li>
+              </ul>
+              <p class="dessert-hors">Dessert hors menu : 3€</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRUSCHETTA -->
+        <div class="bruschetta-section reveal delay-3">
+          <div class="bruschetta-header">
+            <h3 class="bruschetta-title">Bruschetta <span class="bruschetta-tag">Nouveau !</span></h3>
+            <p class="bruschetta-sub">Servie avec Salade — Uniquement sur place</p>
+            <div class="bruschetta-prix-wrap">
+              <span class="bruschetta-prix">15€ <small>le plat</small></span>
+              <span class="bruschetta-sep">·</span>
+              <span class="bruschetta-prix">19€ <small>la formule (dessert + boisson)</small></span>
+            </div>
+          </div>
+          <div class="bruschetta-grid">
+            <div class="bruschetta-item">
+              <span class="bruschetta-nom">Pollo</span>
+              <span class="bruschetta-desc">crème, poulet, oignons frits, mozza râpée</span>
+            </div>
+            <div class="bruschetta-item">
+              <span class="bruschetta-nom">Pescare</span>
+              <span class="bruschetta-desc">crème, ciboulette, truite fumée, mozza râpée</span>
+            </div>
+            <div class="bruschetta-item">
+              <span class="bruschetta-nom">Burrata</span>
+              <span class="bruschetta-desc">sauce tomate, burrata, pistou, mozza râpée</span>
+            </div>
+            <div class="bruschetta-item">
+              <span class="bruschetta-nom">Chorizo</span>
+              <span class="bruschetta-desc">crème, chorizo, tomates cerises, mozza râpée</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTACT / HORAIRES -->
+    <footer id="contact" class="site-footer">
+      <div class="footer-top reveal">
+        <div class="footer-logo">
+          <img src="images/title%20Black.png" alt="Gavezzotti" />
+          <p class="footer-tagline">Bar à pâtes italien</p>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-label">Suivez-nous !</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/gavezzottibarapates/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/gavezzotti_barapates/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-info reveal delay-2">
+        <div class="footer-col" id="horaires">
+          <h4>Horaires</h4>
+          <p>Ouvert le <strong>Mardi</strong> de 12h00 à 14h00</p>
+          <p>Du <strong>Mercredi au Samedi</strong></p>
+          <p>12:00–14:00 / 19:00–22:00</p>
+        </div>
+        <div class="footer-col">
+          <h4>Adresse</h4>
+          <p>209 Rue de Bourgogne</p>
+          <p>45000 Orléans, France</p>
+          <a href="https://maps.google.com/?q=209+Rue+de+Bourgogne+45000+Orleans" target="_blank" rel="noopener" class="footer-link">Voir sur Google Maps</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Téléphone : <a href="tel:+33238546852" class="footer-link">02 38 54 68 52</a></p>
+        </div>
+        <div class="footer-map">
+          <iframe
+            src="https://maps.google.com/maps?q=209+Rue+de+Bourgogne,+45000+Orléans,+France&output=embed&z=16"
+            title="Carte Gavezzotti"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© Conception Florent Desmarets —
+          <a href="mentions-legales.html" class="footer-link">Mentions légales</a> —
+          <a href="allergenes.html" class="footer-link">Liste des allergènes</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

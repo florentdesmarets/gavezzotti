@@ -1,0 +1,14 @@
+{
+  "plat1": {
+    "titre": "Plat du moment",
+    "prix": "16",
+    "description": "À découvrir cette semaine",
+    "image": ""
+  },
+  "plat2": {
+    "titre": "Plat du moment",
+    "prix": "16",
+    "description": "À découvrir cette semaine",
+    "image": ""
+  }
+}

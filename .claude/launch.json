@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gavezzotti",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3456", "C:/Users/Florent/OneDrive/Bureau/dev/Gavezzotti"],
+      "port": 3456
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gavezzotti — Admin</title>
+  <!-- Pas d'indexation de cette page -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <!-- ÉCRAN LOGIN -->
+  <div id="screen-login" class="screen active">
+    <div class="admin-card">
+      <div class="admin-logo">
+        <img src="images/title%20Black.png" alt="Gavezzotti" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="logo-fallback" style="display:none;">Gavezzotti</span>
+      </div>
+      <form id="login-form" autocomplete="off">
+        <input type="text" id="login-user" placeholder="Identifiant" autocomplete="username" required />
+        <input type="password" id="login-pass" placeholder="Mot de passe" autocomplete="current-password" required />
+        <button type="submit">Se connecter</button>
+      </form>
+      <p id="login-error" class="error-msg" style="display:none;">Identifiants incorrects.</p>
+    </div>
+  </div>
+
+  <!-- ÉCRAN ADMIN -->
+  <div id="screen-admin" class="screen">
+    <div class="admin-header">
+      <div class="admin-logo-sm">
+        <img src="images/title%20Black.png" alt="Gavezzotti" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="logo-fallback" style="display:none;">Gavezzotti</span>
+      </div>
+      <a href="index.html" class="btn-back">← Retour au site</a>
+      <button id="btn-logout" class="btn-logout">Déconnexion</button>
+    </div>
+
+    <div class="admin-body">
+      <h1 class="admin-title">Suggestions de la semaine</h1>
+      <p class="admin-subtitle">Modifiez les deux plats affichés sur le site.</p>
+
+      <div class="plats-grid">
+        <!-- Plat 1 -->
+        <div class="plat-form" id="form-plat1">
+          <h2>Plat 1</h2>
+          <label>Titre
+            <input type="text" id="p1-titre" placeholder="ex: Carbonara" />
+          </label>
+          <label>Image
+            <div class="upload-zone" id="upload1-zone">
+              <input type="file" id="p1-img" accept="image/*" />
+              <span>Cliquer pour choisir une image</span>
+              <img id="p1-preview" src="" alt="" style="display:none;" />
+            </div>
+          </label>
+          <label>Prix (€)
+            <input type="number" id="p1-prix" placeholder="ex: 16" min="0" step="0.5" />
+          </label>
+          <label>Description
+            <textarea id="p1-desc" rows="3" placeholder="Ingrédients, saveurs..."></textarea>
+          </label>
+          <button class="btn-submit" data-plat="1">Enregistrer le plat 1</button>
+          <p class="plat-status" id="status1"></p>
+        </div>
+
+        <!-- Plat 2 -->
+        <div class="plat-form" id="form-plat2">
+          <h2>Plat 2</h2>
+          <label>Titre
+            <input type="text" id="p2-titre" placeholder="ex: Pesto Rosso" />
+          </label>
+          <label>Image
+            <div class="upload-zone" id="upload2-zone">
+              <input type="file" id="p2-img" accept="image/*" />
+              <span>Cliquer pour choisir une image</span>
+              <img id="p2-preview" src="" alt="" style="display:none;" />
+            </div>
+          </label>
+          <label>Prix (€)
+            <input type="number" id="p2-prix" placeholder="ex: 16" min="0" step="0.5" />
+          </label>
+          <label>Description
+            <textarea id="p2-desc" rows="3" placeholder="Ingrédients, saveurs..."></textarea>
+          </label>
+          <button class="btn-submit" data-plat="2">Enregistrer le plat 2</button>
+          <p class="plat-status" id="status2"></p>
+        </div>
+      </div>
+
+      <!-- Aperçu rendu -->
+      <div class="preview-section">
+        <h2>Aperçu</h2>
+        <div class="preview-grid" id="preview-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
