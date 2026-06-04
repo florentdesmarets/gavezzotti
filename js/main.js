@@ -12,19 +12,6 @@ closeBtn.addEventListener('click', closeMenu);
 overlay.addEventListener('click', closeMenu);
 document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('click', closeMenu));
 
-/* ===== 5 CLICS LOGO → ADMIN ===== */
-let clickCount = 0;
-let clickTimer;
-document.getElementById('logo-click-zone').addEventListener('click', () => {
-  clickCount++;
-  clearTimeout(clickTimer);
-  clickTimer = setTimeout(() => { clickCount = 0; }, 2000);
-  if (clickCount >= 5) {
-    clickCount = 0;
-    window.location.href = 'admin.html';
-  }
-});
-
 /* ===== CHARGEMENT SUGGESTIONS ===== */
 async function loadSuggestions() {
   const grid = document.getElementById('suggestions-grid');
