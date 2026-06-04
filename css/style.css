@@ -45,7 +45,7 @@ ul { list-style: none; }
   margin: 0 auto;
 }
 .logo-wrap { cursor: pointer; user-select: none; }
-.header-logo { height: 44px; width: auto; }
+.header-logo { height: 88px; width: auto; }
 .header-logo-text {
   font-family: var(--font-serif);
   font-size: 1.8rem;
@@ -753,6 +753,7 @@ ul { list-style: none; }
 @media (max-width: 900px) {
   .footer-info { grid-template-columns: 1fr 1fr; }
   .footer-map { grid-column: 1 / -1; }
+  .header-logo { height: 68px; }
 }
 
 @media (max-width: 768px) {
@@ -789,6 +790,9 @@ ul { list-style: none; }
   /* Events */
   .events-grid { grid-template-columns: 1fr; gap: 16px; }
 
+  /* Header logo */
+  .header-logo { height: 56px; }
+
   /* Footer */
   .footer-top { padding: 20px 16px; flex-direction: column; align-items: flex-start; }
   .footer-info { grid-template-columns: 1fr 1fr; padding: 20px 16px; gap: 16px; }
@@ -803,7 +807,7 @@ ul { list-style: none; }
 
   /* Menu */
   .side-menu { width: 100%; }
-  .header-logo { height: 36px; }
+  .header-logo { height: 48px; }
 
   /* Formules — 2 par ligne sur mobile */
   .formules-grid { gap: 10px; }
