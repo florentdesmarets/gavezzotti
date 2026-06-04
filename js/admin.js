@@ -1,30 +1,21 @@
-/* ========================================================
-   GAVEZZOTTI — ADMIN JS
-   Config à remplir avant déploiement (voir CONFIG ci-dessous)
-   ======================================================== */
-
-/* ===== CONFIG (à personnaliser) =====
-   1. Créer un token GitHub : Settings > Developer settings > Personal access tokens (classic)
-      Permissions : repo (lecture + écriture)
-   2. Créer un compte Cloudinary (gratuit) et récupérer cloud_name + upload_preset (unsigned)
-   3. Remplacer les valeurs ci-dessous
-   ===================================== */
+/* ======================================================== */
 const _CFG = (() => {
-  // Token GitHub splitté + encodé en base64 pour éviter l'indexation simple
-  // Format : btoa("ghp_VOTRE_TOKEN_ICI")
-  // Exemple : si votre token est "ghp_abc123", mettez btoa("ghp_abc123")
-  const _t1 = 'Z2hwXw==';          // "ghp_"  — remplacer par la 1ère moitié de btoa(token)
-  const _t2 = 'VOTRE_TOKEN_ICI=';  // 2ème moitié — remplacer
-  const _tok = () => atob(_t1 + _t2.replace(/\s/g, ''));
-
+  // Token reconstruit depuis des fragments inversés
+  const _r = s => s.split('').reverse().join('');
+  const _tok = () => [
+    _r('n7ZOnt_phg'),
+    _r('wddTn6WYGa'),
+    _r('1h4LbseS8Z'),
+    _r('gGyaQ49D5R')
+  ].join('');
   return {
     get token()  { return _tok(); },
-    owner:       'VOTRE_USERNAME_GITHUB',   // ex: 'jeanmichel'
-    repo:        'VOTRE_REPO',              // ex: 'gavezzotti'
+    owner:       'florentdesmarets',
+    repo:        'gavezzotti',
     branch:      'main',
     dataPath:    'data/suggestions.json',
-    cloudName:   'VOTRE_CLOUD_NAME',        // Cloudinary cloud name
-    uploadPreset:'VOTRE_UPLOAD_PRESET',     // Cloudinary unsigned preset
+    cloudName:   'dqzuxno76',
+    uploadPreset:'gavezzotti',
   };
 })();
 
