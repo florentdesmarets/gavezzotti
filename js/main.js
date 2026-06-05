@@ -214,11 +214,13 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
 /* ===== SCROLL SMOOTH POUR ANCRES ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
+    const href = a.getAttribute('href');
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
-      const offset = 66;
-      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   });
 });
