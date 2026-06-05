@@ -404,6 +404,25 @@ ul { list-style: none; }
   margin-bottom: 10px;
 }
 .event-card p { font-size: 0.88rem; color: var(--beige-dark); line-height: 1.65; }
+.events-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 32px 0;
+}
+.event-photo {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 200px;
+}
+.event-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+.event-photo:hover img { transform: scale(1.05); }
 .events-cta { text-align: center; }
 .btn-cta {
   display: inline-block;
@@ -965,6 +984,8 @@ ul { list-style: none; }
 
   /* Events */
   .events-grid { grid-template-columns: 1fr; gap: 16px; }
+  .events-photos { grid-template-columns: 1fr; }
+  .event-photo { height: 160px; }
   /* Avis */
   .avis-grid { grid-template-columns: 1fr; }
 
