@@ -221,7 +221,7 @@ ul { list-style: none; }
   display: block;
   width: 50px;
   height: 3px;
-  background: linear-gradient(to right, var(--green-it), var(--red-it));
+  background: linear-gradient(to right, var(--green-it) 33%, #ffffff 33%, #ffffff 66%, var(--red-it) 66%);
   margin-top: 10px;
   border-radius: 2px;
 }
@@ -253,7 +253,7 @@ ul { list-style: none; }
 /* ===== ÉVÉNEMENTS ===== */
 .events-section { background: var(--brown); }
 .events-section .section-title { color: var(--beige); }
-.events-section .section-title::after { background: linear-gradient(to right, var(--green-it), var(--red-it)); }
+.events-section .section-title::after { background: linear-gradient(to right, var(--green-it) 33%, #ffffff 33%, #ffffff 66%, var(--red-it) 66%); }
 .events-intro {
   text-align: center;
   color: var(--beige-dark);
