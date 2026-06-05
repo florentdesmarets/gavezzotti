@@ -279,12 +279,17 @@ ul { list-style: none; }
   color: var(--white);
   padding: 0 20px;
 }
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 .hero-title {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 7vw, 6rem);
   font-style: italic;
   text-shadow: 0 2px 12px rgba(0,0,0,0.5);
   margin-bottom: 12px;
+  animation: heroFadeUp 1s cubic-bezier(0.4,0,0.2,1) 0.4s both;
 }
 .hero-subtitle {
   font-family: var(--font-sans);
@@ -293,7 +298,9 @@ ul { list-style: none; }
   text-transform: uppercase;
   opacity: 0.9;
   margin-bottom: 48px;
+  animation: heroFadeUp 1s cubic-bezier(0.4,0,0.2,1) 0.7s both;
 }
+.hero-arrow { animation: heroFadeUp 1s cubic-bezier(0.4,0,0.2,1) 1s both; }
 .hero-arrow {
   display: inline-flex;
   flex-direction: column;
@@ -816,6 +823,64 @@ ul { list-style: none; }
 }
 .galerie-item:hover img { transform: scale(1.06); }
 
+.galerie-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(59,42,26,0.75) 0%, rgba(59,42,26,0) 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px 16px;
+}
+.galerie-item:hover .galerie-overlay { opacity: 1; }
+.galerie-overlay span {
+  color: #fff;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ===== AVIS CLIENTS ===== */
+.avis-section { background: var(--beige); }
+.avis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.avis-card {
+  background: var(--beige-light);
+  border: 1px solid var(--beige-dark);
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+.avis-card:hover { transform: translateY(-4px); }
+.avis-stars { color: #f5a623; font-size: 1.1rem; letter-spacing: 2px; }
+.avis-texte {
+  font-size: 0.88rem;
+  color: var(--brown-light);
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+}
+.avis-auteur {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--beige-dark);
+  padding-top: 12px;
+}
+.avis-nom { font-weight: 700; font-size: 0.85rem; color: var(--brown); }
+.avis-source { font-size: 0.75rem; color: var(--brown-light); }
+.avis-cta { text-align: center; }
+
 /* ===== ANIMATIONS SCROLL ===== */
 .reveal {
   opacity: 0;
@@ -900,6 +965,8 @@ ul { list-style: none; }
 
   /* Events */
   .events-grid { grid-template-columns: 1fr; gap: 16px; }
+  /* Avis */
+  .avis-grid { grid-template-columns: 1fr; }
 
   /* Header logo */
   .header-logo { height: 56px; }
