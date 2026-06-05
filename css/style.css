@@ -618,6 +618,7 @@ ul { list-style: none; }
   font-style: italic;
 }
 .footer-tagline { font-size: 0.82rem; color: var(--brown-light); margin-top: 4px; }
+.footer-tagline-sub { font-size: 0.78rem; color: var(--brown-light); margin-top: 6px; line-height: 1.6; font-style: italic; }
 
 .footer-label { font-size: 0.85rem; color: var(--brown-light); margin-bottom: 10px; font-style: italic; }
 .social-links { display: flex; gap: 16px; }
