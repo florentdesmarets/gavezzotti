@@ -493,6 +493,8 @@ ul { list-style: none; }
   margin-bottom: 48px;
   font-style: italic;
 }
+.formule-note.top { margin-bottom: 16px; margin-top: 0; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.sauce-note { font-size: 0.75rem; color: var(--brown-light); font-style: italic; margin-top: 10px; }
 
 .carte-columns {
   display: grid;
