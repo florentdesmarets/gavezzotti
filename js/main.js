@@ -12,6 +12,83 @@ closeBtn.addEventListener('click', closeMenu);
 overlay.addEventListener('click', closeMenu);
 document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('click', closeMenu));
 
+/* ===== STATUT OUVERT / FERMÉ ===== */
+(() => {
+  const badge = document.getElementById('open-status');
+  if (!badge) return;
+
+  // Horaires (timezone Europe/Paris)
+  // 0=dim, 1=lun, 2=mar, 3=mer, 4=jeu, 5=ven, 6=sam
+  const SLOTS = {
+    2: [[12,0,14,0]],                          // Mardi
+    3: [[12,0,14,0],[19,0,22,0]],              // Mercredi
+    4: [[12,0,14,0],[19,0,22,0]],              // Jeudi
+    5: [[12,0,14,0],[19,0,22,0]],              // Vendredi
+    6: [[12,0,14,0],[19,0,22,0]],              // Samedi
+  };
+  const DAY_FR = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+
+  function getParisParts() {
+    const fmt = new Intl.DateTimeFormat('fr-FR', {
+      timeZone: 'Europe/Paris',
+      weekday: 'narrow', hour: 'numeric', minute: 'numeric', hour12: false,
+    });
+    const now = new Date();
+    // Reconstruct day index via locale-independent method
+    const dayStr = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Paris', weekday: 'short' }).format(now);
+    const days = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 };
+    const day = days[dayStr];
+    const timeStr = new Intl.DateTimeFormat('fr-FR', { timeZone: 'Europe/Paris', hour: '2-digit', minute: '2-digit', hour12: false }).format(now);
+    const [h, m] = timeStr.split(':').map(Number);
+    return { day, h, m };
+  }
+
+  function findNextOpen(day, h, m) {
+    const cur = h * 60 + m;
+    // Check remaining slots today
+    for (const [oh, om, ch, cm] of (SLOTS[day] || [])) {
+      if (cur < oh * 60 + om) return { day, oh, om };
+    }
+    // Next days
+    for (let i = 1; i <= 7; i++) {
+      const d = (day + i) % 7;
+      if (SLOTS[d] && SLOTS[d].length) {
+        const [oh, om] = SLOTS[d][0];
+        return { day: d, oh, om };
+      }
+    }
+    return null;
+  }
+
+  function render() {
+    const { day, h, m } = getParisParts();
+    const cur = h * 60 + m;
+    const slots = SLOTS[day] || [];
+    let openSlot = null;
+    for (const [oh, om, ch, cm] of slots) {
+      if (cur >= oh * 60 + om && cur < ch * 60 + cm) { openSlot = [ch, cm]; break; }
+    }
+
+    if (openSlot) {
+      const [ch, cm] = openSlot;
+      badge.textContent = `● Ouvert · jusqu'à ${ch}h${cm ? cm : ''}`;
+      badge.className = 'open-badge is-open';
+    } else {
+      const next = findNextOpen(day, h, m);
+      if (next) {
+        const label = next.day === day ? `à ${next.oh}h${next.om ? next.om : ''}` : `${DAY_FR[next.day]} à ${next.oh}h${next.om ? next.om : ''}`;
+        badge.textContent = `● Fermé · Ouvre ${label}`;
+      } else {
+        badge.textContent = '● Fermé';
+      }
+      badge.className = 'open-badge is-closed';
+    }
+  }
+
+  render();
+  setInterval(render, 60000); // mise à jour chaque minute
+})();
+
 /* ===== CHARGEMENT SUGGESTIONS ===== */
 async function loadSuggestions() {
   const grid = document.getElementById('suggestions-grid');
