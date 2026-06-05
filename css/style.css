@@ -156,7 +156,7 @@ ul { list-style: none; }
   transition: var(--transition);
 }
 .flag-bar.green  { background: var(--green-it); }
-.flag-bar.white  { background: #ccc; }
+.flag-bar.white  { background: #fff; }
 .flag-bar.red    { background: var(--red-it); }
 .burger-btn:hover .flag-bar { transform: scaleX(1.1); }
 
