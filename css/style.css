@@ -709,7 +709,7 @@ ul { list-style: none; }
   height: 180px;
   border: none;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 6px 24px rgba(59,42,26,0.30), 0 2px 8px rgba(59,42,26,0.18);
 }
 
 .footer-bottom {
@@ -1014,9 +1014,12 @@ ul { list-style: none; }
 
   /* Formules — 2 par ligne sur mobile */
   .formules-grid { gap: 10px; }
-  .formule-circle { width: 90px; height: 90px; }
-  .formule-prix { font-size: 1.05rem; }
-  .formule-nom { font-size: 0.65rem; }
+  .formule-circle { width: 100px; height: 100px; }
+  .circle-inner { padding: 6px; }
+  .formule-prix { font-size: 1rem; }
+  .formule-prix-f { font-size: 0.8rem; }
+  .formule-nom { font-size: 0.6rem; line-height: 1.1; }
+  .formule-sub { font-size: 0.55rem; }
 
   /* Carousel */
   .carousel-slide { flex: 0 0 200px; height: 160px; }
