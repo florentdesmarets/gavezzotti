@@ -124,7 +124,7 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
   // Cloner les slides pour boucle infinie
   const origSlides = [...track.children];
   origSlides.forEach(s => track.appendChild(s.cloneNode(true)));
-  origSlides.forEach(s => track.prepend(s.cloneNode(true)));
+  [...origSlides].reverse().forEach(s => track.prepend(s.cloneNode(true)));
 
   const slideW = () => track.children[0].offsetWidth + 16;
   const total  = origSlides.length;
