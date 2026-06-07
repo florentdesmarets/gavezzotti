@@ -235,6 +235,23 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
   .forEach(el => observer.observe(el));
 
+/* ===== DATES AVIS GOOGLE ===== */
+(() => {
+  const now = new Date();
+  document.querySelectorAll('.avis-source[data-date]').forEach(el => {
+    const date = new Date(el.dataset.date);
+    const diffMs = now - date;
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const diffMonths = Math.floor(diffDays / 30.44);
+    const diffYears = Math.floor(diffDays / 365.25);
+    let label;
+    if (diffDays < 30) label = diffDays <= 1 ? 'il y a 1 jour' : `il y a ${diffDays} jours`;
+    else if (diffMonths < 12) label = diffMonths <= 1 ? 'il y a 1 mois' : `il y a ${diffMonths} mois`;
+    else label = diffYears <= 1 ? 'il y a 1 an' : `il y a ${diffYears} ans`;
+    el.querySelector('.avis-age').textContent = label;
+  });
+})();
+
 /* ===== SCROLL SMOOTH POUR ANCRES ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
