@@ -949,9 +949,17 @@ ul { list-style: none; }
   overflow: hidden;
   border-radius: 6px;
   position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 .galerie-item.tall { grid-row: span 2; }
 .galerie-item.wide { grid-column: span 2; }
+.galerie-item.expanded {
+  grid-column: span 2;
+  grid-row: span 2;
+  box-shadow: 0 12px 40px rgba(59,42,26,0.35);
+  z-index: 2;
+}
 .galerie-item img {
   width: 100%;
   height: 100%;
@@ -960,6 +968,7 @@ ul { list-style: none; }
   display: block;
 }
 .galerie-item:hover img { transform: scale(1.06); }
+.galerie-item.expanded img { transform: scale(1.0); }
 
 .galerie-overlay {
   position: absolute;

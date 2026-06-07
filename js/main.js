@@ -200,6 +200,18 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
   wrap.addEventListener('touchend',   e => dragEnd(e.changedTouches[0].clientX));
 })();
 
+/* ===== GALERIE EXPANSION ===== */
+(() => {
+  if (window.matchMedia('(pointer: coarse)').matches) return; // mobile : désactivé
+  document.querySelectorAll('.galerie-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isExpanded = item.classList.contains('expanded');
+      document.querySelectorAll('.galerie-item.expanded').forEach(i => i.classList.remove('expanded'));
+      if (!isExpanded) item.classList.add('expanded');
+    });
+  });
+})();
+
 /* ===== ANIMATIONS SCROLL ===== */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
