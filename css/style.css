@@ -392,7 +392,7 @@ ul { list-style: none; }
   width: 50%;
   overflow: hidden;
 }
-.aa-before-layer img { width: 200%; max-width: none; }
+.aa-before-layer img { width: 200%; max-width: none; object-position: right center; }
 .aa-label {
   position: absolute;
   bottom: 16px;
