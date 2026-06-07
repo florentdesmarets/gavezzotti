@@ -12,7 +12,7 @@
   <meta property="og:type" content="restaurant" />
   <meta property="og:title" content="Gavezzotti — Bar à Pâtes Italien · Orléans" />
   <meta property="og:description" content="Pâtes cuites al dente, gnocchis, raviolis et bruschetta au cœur d'Orléans. Sur place ou à emporter. 209 Rue de Bourgogne." />
-  <meta property="og:image" content="images/hero1.png" />
+  <meta property="og:image" content="https://gavezzotti.fr/images/hero1.png" />
   <meta property="og:url" content="https://gavezzotti.fr" />
   <meta property="og:locale" content="fr_FR" />
 
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Gavezzotti — Bar à Pâtes Italien · Orléans" />
   <meta name="twitter:description" content="Pâtes cuites al dente, gnocchis, raviolis et bruschetta au cœur d'Orléans." />
-  <meta name="twitter:image" content="images/hero1.png" />
+  <meta name="twitter:image" content="https://gavezzotti.fr/images/hero1.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
@@ -30,6 +30,58 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=2" />
+
+  <!-- Schema.org Restaurant (référencement Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Gavezzotti",
+    "description": "Bar à pâtes italien au cœur d'Orléans. Pâtes cuites al dente, gnocchis, raviolis et bruschetta, sur place ou à emporter.",
+    "url": "https://gavezzotti.fr",
+    "telephone": "+33238546852",
+    "email": "gavezzotti@gmail.com",
+    "image": "https://gavezzotti.fr/images/hero1.png",
+    "priceRange": "€",
+    "servesCuisine": "Italienne",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "209 Rue de Bourgogne",
+      "addressLocality": "Orléans",
+      "postalCode": "45000",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.9001296,
+      "longitude": 1.9092373
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday"],
+        "opens": "12:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "12:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "19:00",
+        "closes": "22:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/gavezzotti",
+      "https://www.instagram.com/gavezzotti_orleans"
+    ]
+  }
+  </script>
 </head>
 <body>
 
