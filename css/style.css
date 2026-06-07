@@ -465,8 +465,9 @@ ul { list-style: none; }
   border-radius: 8px;
   box-shadow: var(--shadow);
   width: 100%;
-  height: 280px;
+  height: 480px;
   object-fit: cover;
+  object-position: center top;
 }
 
 /* ===== ÉVÉNEMENTS ===== */
@@ -1072,7 +1073,7 @@ ul { list-style: none; }
   /* QSN */
   .qsn-inner { grid-template-columns: 1fr; gap: 24px; }
   .qsn-photo { order: -1; }
-  .qsn-photo img { height: 220px; }
+  .qsn-photo img { height: 320px; }
   .aa-slider { height: 260px; }
   .travaux-grid { grid-template-columns: repeat(3, 1fr); }
   .travaux-grid img { height: 110px; }
