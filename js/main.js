@@ -89,27 +89,6 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
   setInterval(render, 60000); // mise à jour chaque minute
 })();
 
-/* ===== CHARGEMENT SUGGESTIONS ===== */
-async function loadSuggestions() {
-  const grid = document.getElementById('suggestions-grid');
-  try {
-    const r = await fetch('data/suggestions.json?t=' + Date.now());
-    if (!r.ok) throw new Error();
-    const data = await r.json();
-    grid.innerHTML = [data.plat1, data.plat2].map(p => `
-      <div class="suggestion-card">
-        <h3>${p.titre}</h3>
-        <img src="${p.image}" alt="${p.titre}" onerror="this.style.display='none'" loading="lazy" />
-        <p class="suggestion-prix">${p.prix}€</p>
-        <p class="suggestion-desc">${p.description}</p>
-      </div>
-    `).join('');
-  } catch {
-    grid.innerHTML = '<p style="padding:24px;text-align:center;color:#7a5c3a;grid-column:1/-1">Les suggestions de la semaine arrivent bientôt&hellip;</p>';
-  }
-}
-
-loadSuggestions();
 
 /* ===== HERO SLIDESHOW ===== */
 (() => {
