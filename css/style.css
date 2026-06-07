@@ -732,6 +732,54 @@ ul { list-style: none; }
 .dessert-hors { font-size: 0.78rem; color: var(--brown-light); font-style: italic; margin-top: 10px; }
 
 /* ===== BRUSCHETTA ===== */
+/* Bloc allergènes dans la carte */
+.carte-allergenes {
+  margin-top: 36px;
+  background: linear-gradient(135deg, #f0faf4 0%, #e6f7ed 100%);
+  border: 1.5px solid #b2dfc2;
+  border-radius: 12px;
+  padding: 20px 28px;
+}
+.carte-allergenes-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.carte-allergenes-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+}
+.carte-allergenes-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.carte-allergenes-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #1a5c30;
+  margin-bottom: 4px;
+}
+.carte-allergenes-text p {
+  font-size: 0.83rem;
+  color: #3a7a50;
+  line-height: 1.55;
+  margin: 0;
+}
+.carte-allergenes-btn {
+  display: inline-block;
+  background: var(--green-it);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 30px;
+  white-space: nowrap;
+  transition: background 0.3s, transform 0.2s;
+  flex-shrink: 0;
+}
+.carte-allergenes-btn:hover { background: #007a38; transform: translateY(-1px); }
+
 .bruschetta-section {
   margin-top: 40px;
   background: var(--brown);
