@@ -389,10 +389,16 @@ ul { list-style: none; }
   pointer-events: none;
 }
 .aa-before-layer {
-  width: 50%;
-  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 50% 0 0);
 }
-.aa-before-layer img { width: 200%; max-width: none; height: 100%; object-fit: cover; transform: translateX(-50%); }
+.aa-before-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+}
 .aa-label {
   position: absolute;
   bottom: 16px;

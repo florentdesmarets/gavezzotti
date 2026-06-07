@@ -126,8 +126,8 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
     const rect = slider.getBoundingClientRect();
     let pct = (clientX - rect.left) / rect.width * 100;
     pct = Math.max(2, Math.min(98, pct));
-    before.style.width = pct + '%';
-    handle.style.left  = pct + '%';
+    before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+    handle.style.left     = pct + '%';
   }
 
   slider.addEventListener('mousedown',  e => { dragging = true; move(e.clientX); });
