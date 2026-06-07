@@ -569,7 +569,6 @@ ul { list-style: none; }
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: background 0.25s, transform 0.25s;
-  box-shadow: 0 4px 16px rgba(0,146,70,0.35);
 }
 .btn-cta:hover { background: #007a38; transform: scale(1.04); }
 
