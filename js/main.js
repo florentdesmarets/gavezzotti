@@ -114,6 +114,29 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
   start();
 })();
 
+/* ===== SLIDER AVANT / APRÈS ===== */
+(() => {
+  const slider = document.getElementById('aa-slider');
+  if (!slider) return;
+  const before = document.getElementById('aa-before');
+  const handle = document.getElementById('aa-handle');
+  let dragging = false;
+
+  function move(clientX) {
+    const rect = slider.getBoundingClientRect();
+    let pct = (clientX - rect.left) / rect.width * 100;
+    pct = Math.max(2, Math.min(98, pct));
+    before.style.width = pct + '%';
+    handle.style.left  = pct + '%';
+  }
+
+  slider.addEventListener('mousedown',  e => { dragging = true; move(e.clientX); });
+  window.addEventListener('mousemove',  e => { if (dragging) move(e.clientX); });
+  window.addEventListener('mouseup',    () => dragging = false);
+  slider.addEventListener('touchstart', e => move(e.touches[0].clientX), { passive: true });
+  slider.addEventListener('touchmove',  e => { e.preventDefault(); move(e.touches[0].clientX); }, { passive: false });
+})();
+
 /* ===== CARROUSEL INFINI ===== */
 (() => {
   const track = document.getElementById('carousel-track');
