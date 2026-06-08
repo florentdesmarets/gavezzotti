@@ -231,7 +231,7 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
   const origImgs = [...track.querySelectorAll('img')];
   const total = origImgs.length;
   const gap = 12;
-  const visible = () => window.innerWidth <= 768 ? 2 : 3;
+  const visible = () => window.innerWidth <= 768 ? 1 : 3;
 
   origImgs.forEach(img => track.appendChild(img.cloneNode(true)));
   [...origImgs].reverse().forEach(img => track.prepend(img.cloneNode(true)));
