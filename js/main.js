@@ -265,6 +265,22 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
       if (idx <= 0) setTimeout(() => jumpTo(total, false), 420);
     });
 
+    // Swipe tactile
+    let touchStartX = 0;
+    track.parentElement.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.parentElement.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          jumpTo(idx + 1, true);
+          if (idx >= total * 2) setTimeout(() => jumpTo(total, false), 420);
+        } else {
+          jumpTo(idx - 1, true);
+          if (idx <= 0) setTimeout(() => jumpTo(total, false), 420);
+        }
+      }
+    }, { passive: true });
+
     window.addEventListener('resize', () => { idx = total; refresh(); });
     refresh();
   })();
