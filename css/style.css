@@ -546,7 +546,7 @@ ul { list-style: none; }
   object-fit: cover;
   object-position: center top;
 }
-.qsn-famille .qsn-photo img { height: 340px; }
+.qsn-famille .qsn-photo img { height: 340px; object-position: center bottom; }
 .qsn-famille { margin-top: 40px; }
 
 /* ===== ÉVÉNEMENTS ===== */
