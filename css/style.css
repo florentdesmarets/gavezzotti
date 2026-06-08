@@ -501,8 +501,9 @@ ul { list-style: none; }
 }
 .travaux-carousel-track img {
   flex: 0 0 calc(33.333% - 8px);
-  height: 200px;
+  height: 160px;
   object-fit: cover;
+  object-position: center center;
   border-radius: 8px;
   box-shadow: var(--shadow);
   display: block;
