@@ -200,9 +200,9 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
   wrap.addEventListener('touchend',   e => dragEnd(e.changedTouches[0].clientX));
 })();
 
-/* ===== GALERIE EXPANSION ===== */
+/* ===== GALERIE EXPANSION (desktop uniquement) ===== */
 (() => {
-  if (window.matchMedia('(pointer: coarse)').matches) return; // mobile : désactivé
+  if (window.matchMedia('(pointer: coarse)').matches) return;
   function makeExpandable(selector) {
     document.querySelectorAll(selector).forEach(item => {
       item.addEventListener('click', () => {
@@ -219,76 +219,73 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
       });
     });
   }
-
   makeExpandable('.galerie-item');
+})();
 
-  // Carousel Travaux (boucle infinie)
-  (() => {
-    const track = document.getElementById('travaux-track');
-    if (!track) return;
-    const prev = document.querySelector('.travaux-prev');
-    const next = document.querySelector('.travaux-next');
-    const origImgs = [...track.querySelectorAll('img')];
-    const total = origImgs.length;
-    const gap = 12;
-    const visible = () => window.innerWidth <= 768 ? 2 : 3;
+/* ===== CAROUSEL TRAVAUX (boucle infinie, desktop + mobile) ===== */
+(() => {
+  const track = document.getElementById('travaux-track');
+  if (!track) return;
+  const prev = document.querySelector('.travaux-prev');
+  const next = document.querySelector('.travaux-next');
+  const origImgs = [...track.querySelectorAll('img')];
+  const total = origImgs.length;
+  const gap = 12;
+  const visible = () => window.innerWidth <= 768 ? 2 : 3;
 
-    // Cloner avant et après pour la boucle
-    origImgs.forEach(img => track.appendChild(img.cloneNode(true)));
-    [...origImgs].reverse().forEach(img => track.prepend(img.cloneNode(true)));
+  origImgs.forEach(img => track.appendChild(img.cloneNode(true)));
+  [...origImgs].reverse().forEach(img => track.prepend(img.cloneNode(true)));
 
-    const allImgs = [...track.querySelectorAll('img')];
-    let idx = total; // démarrer après les clones du début
+  const allImgs = [...track.querySelectorAll('img')];
+  let idx = total;
 
-    function setWidths() {
-      const vp = track.parentElement;
-      const imgW = (vp.offsetWidth - gap * (visible() - 1)) / visible();
-      allImgs.forEach(img => {
-        img.style.width = imgW + 'px';
-        img.style.flexBasis = imgW + 'px';
-        img.style.flexShrink = '0';
-        img.style.flexGrow = '0';
-      });
-    }
-
-    function imgW() { return allImgs[0] ? allImgs[0].offsetWidth : 0; }
-
-    function jumpTo(i, animate) {
-      track.style.transition = animate ? 'transform 0.4s ease' : 'none';
-      track.style.transform = `translateX(-${i * (imgW() + gap)}px)`;
-      idx = i;
-    }
-
-    function refresh() { setWidths(); jumpTo(idx, false); }
-
-    next.addEventListener('click', () => {
-      jumpTo(idx + 1, true);
-      if (idx >= total * 2) setTimeout(() => jumpTo(total, false), 420);
+  function setWidths() {
+    const vp = track.parentElement;
+    const w = (vp.offsetWidth - gap * (visible() - 1)) / visible();
+    allImgs.forEach(img => {
+      img.style.width = w + 'px';
+      img.style.flexBasis = w + 'px';
+      img.style.flexShrink = '0';
+      img.style.flexGrow = '0';
     });
-    prev.addEventListener('click', () => {
-      jumpTo(idx - 1, true);
-      if (idx <= 0) setTimeout(() => jumpTo(total, false), 420);
-    });
+  }
 
-    // Swipe tactile
-    let touchStartX = 0;
-    track.parentElement.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    track.parentElement.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) {
-        if (diff > 0) {
-          jumpTo(idx + 1, true);
-          if (idx >= total * 2) setTimeout(() => jumpTo(total, false), 420);
-        } else {
-          jumpTo(idx - 1, true);
-          if (idx <= 0) setTimeout(() => jumpTo(total, false), 420);
-        }
+  function imgW() { return allImgs[0] ? allImgs[0].offsetWidth : 0; }
+
+  function jumpTo(i, animate) {
+    track.style.transition = animate ? 'transform 0.4s ease' : 'none';
+    track.style.transform = `translateX(-${i * (imgW() + gap)}px)`;
+    idx = i;
+  }
+
+  function refresh() { setWidths(); jumpTo(idx, false); }
+
+  next.addEventListener('click', () => {
+    jumpTo(idx + 1, true);
+    if (idx >= total * 2) setTimeout(() => jumpTo(total, false), 420);
+  });
+  prev.addEventListener('click', () => {
+    jumpTo(idx - 1, true);
+    if (idx <= 0) setTimeout(() => jumpTo(total, false), 420);
+  });
+
+  let touchStartX = 0;
+  track.parentElement.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.parentElement.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        jumpTo(idx + 1, true);
+        if (idx >= total * 2) setTimeout(() => jumpTo(total, false), 420);
+      } else {
+        jumpTo(idx - 1, true);
+        if (idx <= 0) setTimeout(() => jumpTo(total, false), 420);
       }
-    }, { passive: true });
+    }
+  }, { passive: true });
 
-    window.addEventListener('resize', () => { idx = total; refresh(); });
-    refresh();
-  })();
+  window.addEventListener('resize', () => { idx = total; refresh(); });
+  refresh();
 })();
 
 /* ===== ANIMATIONS SCROLL ===== */
