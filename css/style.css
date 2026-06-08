@@ -500,7 +500,7 @@ ul { list-style: none; }
   transition: transform 0.4s ease;
 }
 .travaux-carousel-track img {
-  flex: 0 0 calc(33.333% - 8px);
+  flex-shrink: 0;
   height: 160px;
   object-fit: cover;
   object-position: center center;

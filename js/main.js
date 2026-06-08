@@ -228,26 +228,33 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
     if (!track) return;
     const prev = document.querySelector('.travaux-prev');
     const next = document.querySelector('.travaux-next');
-    const imgs = track.querySelectorAll('img');
+    const imgs = [...track.querySelectorAll('img')];
     let idx = 0;
+    const gap = 12;
     const visible = () => window.innerWidth <= 768 ? 2 : 3;
 
-    function update() {
-      const imgW = track.parentElement.offsetWidth / visible();
-      track.style.transform = `translateX(-${idx * (imgW + 12)}px)`;
+    function setWidths() {
+      const vp = track.parentElement; // viewport
+      const imgW = (vp.offsetWidth - gap * (visible() - 1)) / visible();
+      imgs.forEach(img => img.style.width = imgW + 'px');
     }
 
+    function update() {
+      const imgW = imgs[0] ? imgs[0].offsetWidth : 0;
+      track.style.transform = `translateX(-${idx * (imgW + gap)}px)`;
+    }
+
+    function refresh() { setWidths(); update(); }
+
     next.addEventListener('click', () => {
-      if (idx < imgs.length - visible()) idx++;
-      update();
+      if (idx < imgs.length - visible()) { idx++; update(); }
     });
     prev.addEventListener('click', () => {
-      if (idx > 0) idx--;
-      update();
+      if (idx > 0) { idx--; update(); }
     });
 
-    window.addEventListener('resize', () => { idx = 0; update(); });
-    update();
+    window.addEventListener('resize', () => { idx = 0; refresh(); });
+    refresh();
   })();
 })();
 
