@@ -1191,7 +1191,7 @@ ul { list-style: none; }
   .qsn-photo img { height: 320px; }
   .aa-slider { height: 260px; }
   .travaux-grid { grid-template-columns: repeat(3, 1fr); }
-  .travaux-grid img { height: 110px; }
+  .travaux-grid img { height: 150px; }
 
   /* Carousel */
   .carousel-slide { flex: 0 0 260px; height: 200px; }
