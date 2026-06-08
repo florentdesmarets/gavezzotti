@@ -203,23 +203,25 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
 /* ===== GALERIE EXPANSION ===== */
 (() => {
   if (window.matchMedia('(pointer: coarse)').matches) return; // mobile : désactivé
-  document.querySelectorAll('.galerie-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const isExpanded = item.classList.contains('expanded');
-
-      // Fermer l'éventuel déjà ouvert avec animation collapse
-      document.querySelectorAll('.galerie-item.expanded').forEach(i => {
-        i.classList.remove('expanded', 'expanding');
-        i.classList.add('collapsing');
-        setTimeout(() => i.classList.remove('collapsing'), 350);
+  function makeExpandable(selector) {
+    document.querySelectorAll(selector).forEach(item => {
+      item.addEventListener('click', () => {
+        const isExpanded = item.classList.contains('expanded');
+        document.querySelectorAll(selector + '.expanded').forEach(i => {
+          i.classList.remove('expanded', 'expanding');
+          i.classList.add('collapsing');
+          setTimeout(() => i.classList.remove('collapsing'), 350);
+        });
+        if (!isExpanded) {
+          item.classList.add('expanded', 'expanding');
+          setTimeout(() => item.classList.remove('expanding'), 500);
+        }
       });
-
-      if (!isExpanded) {
-        item.classList.add('expanded', 'expanding');
-        setTimeout(() => item.classList.remove('expanding'), 500);
-      }
     });
-  });
+  }
+
+  makeExpandable('.galerie-item');
+  makeExpandable('.travaux-item');
 })();
 
 /* ===== ANIMATIONS SCROLL ===== */
