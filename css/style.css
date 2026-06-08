@@ -476,16 +476,14 @@ ul { list-style: none; }
   border-radius: 8px;
   cursor: pointer;
 }
-.travaux-item.expanded {
-  grid-column: span 2;
-  box-shadow: 0 12px 40px rgba(59,42,26,0.35);
-  z-index: 2;
-}
+.travaux-item { z-index: 1; }
+.travaux-item.expanded { z-index: 10; }
 .travaux-item.expanded img {
-  height: 240px;
+  transform: scale(1.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  border-radius: 10px;
 }
-.travaux-item.expanding img { animation: galExpand 0.5s cubic-bezier(0.34,1.4,0.64,1) both; }
-.travaux-item.collapsing img { animation: galCollapse 0.35s ease both; }
+.travaux-grid img { transition: transform 0.35s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.35s ease; }
 .travaux-grid img {
   width: 100%;
   height: 160px;

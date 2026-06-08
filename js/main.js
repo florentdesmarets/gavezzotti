@@ -221,7 +221,15 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
   }
 
   makeExpandable('.galerie-item');
-  makeExpandable('.travaux-item');
+
+  // Travaux : scale simple, pas de span grille
+  document.querySelectorAll('.travaux-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isExpanded = item.classList.contains('expanded');
+      document.querySelectorAll('.travaux-item.expanded').forEach(i => i.classList.remove('expanded'));
+      if (!isExpanded) item.classList.add('expanded');
+    });
+  });
 })();
 
 /* ===== ANIMATIONS SCROLL ===== */
