@@ -243,7 +243,12 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
     function setWidths() {
       const vp = track.parentElement;
       const imgW = (vp.offsetWidth - gap * (visible() - 1)) / visible();
-      allImgs.forEach(img => img.style.width = imgW + 'px');
+      allImgs.forEach(img => {
+        img.style.width = imgW + 'px';
+        img.style.flexBasis = imgW + 'px';
+        img.style.flexShrink = '0';
+        img.style.flexGrow = '0';
+      });
     }
 
     function imgW() { return allImgs[0] ? allImgs[0].offsetWidth : 0; }

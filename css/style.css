@@ -1225,7 +1225,7 @@ ul { list-style: none; }
   .qsn-photo { order: -1; }
   .qsn-photo img { height: 320px; }
   .aa-slider { height: 260px; }
-  .travaux-carousel-track img { flex: 0 0 calc(50% - 6px); height: 150px; }
+  .travaux-carousel-track img { height: 150px; }
 
   /* Carousel */
   .carousel-slide { flex: 0 0 260px; height: 200px; }
