@@ -532,14 +532,20 @@ ul { list-style: none; }
   color: var(--brown-light);
   margin-bottom: 16px;
 }
+.qsn-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 .qsn-photo img {
   border-radius: 8px;
   box-shadow: var(--shadow);
   width: 100%;
-  height: 480px;
+  height: 230px;
   object-fit: cover;
   object-position: center top;
 }
+.qsn-photo img:first-child { height: 280px; }
 
 /* ===== ÉVÉNEMENTS ===== */
 .events-section { background: var(--brown); }
