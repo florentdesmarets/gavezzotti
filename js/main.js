@@ -222,14 +222,33 @@ document.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('clic
 
   makeExpandable('.galerie-item');
 
-  // Travaux : scale simple, pas de span grille
-  document.querySelectorAll('.travaux-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const isExpanded = item.classList.contains('expanded');
-      document.querySelectorAll('.travaux-item.expanded').forEach(i => i.classList.remove('expanded'));
-      if (!isExpanded) item.classList.add('expanded');
+  // Carousel Travaux
+  (() => {
+    const track = document.getElementById('travaux-track');
+    if (!track) return;
+    const prev = document.querySelector('.travaux-prev');
+    const next = document.querySelector('.travaux-next');
+    const imgs = track.querySelectorAll('img');
+    let idx = 0;
+    const visible = () => window.innerWidth <= 768 ? 2 : 3;
+
+    function update() {
+      const imgW = track.parentElement.offsetWidth / visible();
+      track.style.transform = `translateX(-${idx * (imgW + 12)}px)`;
+    }
+
+    next.addEventListener('click', () => {
+      if (idx < imgs.length - visible()) idx++;
+      update();
     });
-  });
+    prev.addEventListener('click', () => {
+      if (idx > 0) idx--;
+      update();
+    });
+
+    window.addEventListener('resize', () => { idx = 0; update(); });
+    update();
+  })();
 })();
 
 /* ===== ANIMATIONS SCROLL ===== */
