@@ -541,11 +541,12 @@ ul { list-style: none; }
   border-radius: 8px;
   box-shadow: var(--shadow);
   width: 100%;
-  height: 230px;
+  height: 480px;
   object-fit: cover;
   object-position: center top;
 }
-.qsn-photo img:first-child { height: 280px; }
+.qsn-famille .qsn-photo img { height: 340px; }
+.qsn-famille { margin-top: 40px; }
 
 /* ===== ÉVÉNEMENTS ===== */
 .events-section { background: var(--brown); }
